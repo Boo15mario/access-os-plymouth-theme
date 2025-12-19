@@ -6,7 +6,7 @@ ModuleName=two-step
 [two-step]
 Font=Cantarell 12
 TitleFont=Cantarell Light 30
-ImageDir=/usr/share/plymouth/themes/access-bgrt/assets
+ImageDir=/usr/share/plymouth/themes/access-os-boot/assets
 DialogHorizontalAlignment=.5
 DialogVerticalAlignment=.382
 TitleHorizontalAlignment=.5
@@ -21,6 +21,8 @@ BackgroundStartColor=0x000000
 BackgroundEndColor=0x000000
 ProgressBarBackgroundColor=0xff0000
 ProgressBarForegroundColor=0xffffff
+ProgressBarWidth=1200
+ProgressBarHeight=30
 DialogClearsFirmwareBackground=true
 MessageBelowAnimation=true
 

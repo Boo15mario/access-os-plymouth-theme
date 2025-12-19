@@ -11,14 +11,14 @@ Black-background Plymouth theme with a centered red ring spinner and a white pro
 ```
 sudo ./install.sh
 ```
-This copies the theme to `/usr/share/plymouth/themes/access-bgrt`, overlays custom spinner frames (`access-bgrt/assets/`), and runs `plymouth-set-default-theme -R access-bgrt` to rebuild initramfs.
+This copies the theme to `/usr/share/plymouth/themes/access-os-boot`, overlays custom spinner frames (`access-os-boot/assets/`), and runs `plymouth-set-default-theme -R access-os-boot` to rebuild initramfs.
 
 2) Reboot to see the theme.
 
 ## Verify Installation
 - Check the theme is in initramfs:
 ```
-sudo lsinitrd /boot/initramfs-$(uname -r).img | grep access-bgrt
+sudo lsinitrd /boot/initramfs-$(uname -r).img | grep access-os-boot
 ```
 - After boot or shutdown, inspect Plymouth logs for errors:
 ```
@@ -26,7 +26,7 @@ journalctl -b | grep -i plymouth
 ```
 
 ## Updating the Theme
-- Edit assets or `access-bgrt/access-bgrt.plymouth` as needed.
+- Edit assets or `access-os-boot/access-os-boot.plymouth` as needed.
 - Re-run:
 ```
 sudo ./install.sh
@@ -40,9 +40,9 @@ sudo plymouth-set-default-theme -R spinner
 ```
 - Optionally remove installed files:
 ```
-sudo rm -rf /usr/share/plymouth/themes/access-bgrt
+sudo rm -rf /usr/share/plymouth/themes/access-os-boot
 ```
 
 ## Notes
 - The theme uses the `two-step` module only; no script plugin is required.
-- Spinner frames are `animation-*.png` and `throbber-*.png` in `access-bgrt/assets/`; update both sets if you regenerate visuals.
+- Spinner frames are `animation-*.png` and `throbber-*.png` in `access-os-boot/assets/`; update both sets if you regenerate visuals.

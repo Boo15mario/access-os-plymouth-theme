@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Install the Access OS BGRT theme and set it as default.
+# Install the Access OS boot theme and set it as default.
 
-theme_name="access-bgrt"
+theme_name="access-os-boot"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 src_dir="${script_dir}/${theme_name}"
 dst_dir="/usr/share/plymouth/themes/${theme_name}"

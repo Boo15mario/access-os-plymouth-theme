@@ -1,18 +1,18 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- Root: `install.sh` installs the Plymouth theme to `/usr/share/plymouth/themes/access-bgrt` and rebuilds the initramfs.
-- Theme: `access-bgrt/` holds `access-bgrt.plymouth` (two-step config), custom spinner assets in `access-bgrt/assets/` (animation-*/throbber-* ring frames), and any supporting files.
-- System install path (after running install): `/usr/share/plymouth/themes/access-bgrt/` mirrors the theme directory; avoid editing live files directly—edit the repo and reinstall.
+- Root: `install.sh` installs the Plymouth theme to `/usr/share/plymouth/themes/access-os-boot` and rebuilds the initramfs.
+- Theme: `access-os-boot/` holds `access-os-boot.plymouth` (two-step config), custom spinner assets in `access-os-boot/assets/` (animation-*/throbber-* ring frames), and any supporting files.
+- System install path (after running install): `/usr/share/plymouth/themes/access-os-boot/` mirrors the theme directory; avoid editing live files directly—edit the repo and reinstall.
 
 ## Build, Test, and Development Commands
-- `sudo ./install.sh` — copies assets/config to `/usr/share/plymouth/themes/access-bgrt` and runs `plymouth-set-default-theme -R access-bgrt` to rebuild initramfs.
-- Optional check: `sudo lsinitrd /boot/initramfs-$(uname -r).img | grep access-bgrt` — verify assets/config landed in initramfs.
+- `sudo ./install.sh` — copies assets/config to `/usr/share/plymouth/themes/access-os-boot` and runs `plymouth-set-default-theme -R access-os-boot` to rebuild initramfs.
+- Optional check: `sudo lsinitrd /boot/initramfs-$(uname -r).img | grep access-os-boot` — verify assets/config landed in initramfs.
 - Optional log check: `journalctl -b | grep -i plymouth` — inspect Plymouth messages after boot/shutdown.
 
 ## Coding Style & Naming Conventions
 - Shell: `bash`, `set -euo pipefail`. Prefer clear, quoted vars and explicit paths.
-- Assets: PNG files named `animation-####.png` and `throbber-####.png` (zero-padded) under `access-bgrt/assets/`.
+- Assets: PNG files named `animation-####.png` and `throbber-####.png` (zero-padded) under `access-os-boot/assets/`.
 - Colors: Hex ARGB in `.plymouth` (e.g., `0x000000` for black).
 
 ## Testing Guidelines
